@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/main_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+    integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/main_script.js"></script>
+  <title>Product Name</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js" defer></script>
+  <script src="slider.js" defer></script>
+  <script src="cart.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav class="navbar z-4 navv bg-transparent fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html"><img src="../logo.png" class="icon" data-aos="fade-right"
+              data-aos-offset="300" data-aos-easing="ease-in-sine"></img></a>
+          <h1 style="font-weight: bold;margin-right: 23px;" class="h4 icon-name">GBag</h1>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div style="font-family: cursive;" class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i>
+                    Home</a>
+                </li><br>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-user"></i> Login</a>
+                </li>
+                <br>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-bag-shopping"></i> Your Bag</a>
+                </li>
+                <br>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-heart"></i> Favourite</a>
+                </li>
+                <br>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-fire"></i> Popular</a>
+                </li><br>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-clock"></i> Newest</a>
+                </li><br>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-tags"></i> Offers</a>
+                </li><br>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Categories
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                  </ul>
+                </li><br>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Brands
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                  </ul>
+                </li><br>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-question"></i> Help</a>
+                </li><br>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-address-book"></i> Contact
+                    Us</a>
+                </li><br>
+
+
+
+              </ul>
+              <br>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control search-input me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+              </form>
+              <br>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="default gallery">
+        <div class="main-img">
+          <img class="active"
+            src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/4d869c49-dcb5-4671-91b8-68e166bd81dd/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+            alt="product-img" />
+          <img
+            src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/a2ea6af3-b36f-4684-aef0-7e29d91311f3/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+            alt="product-img" />
+          <img
+            src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/ace0065e-ce57-4581-91c7-605428a8ab60/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+            alt="product-img" />
+          <img
+            src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/030f39b6-5eae-4213-b8ec-411efa206a31/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+            alt="product-img" />
+        </div>
+        <div class="thumb-list">
+          <div class="active">
+            <img
+              src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/4d869c49-dcb5-4671-91b8-68e166bd81dd/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+              alt="product-img" />
+          </div>
+          <div>
+            <img
+              src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/a2ea6af3-b36f-4684-aef0-7e29d91311f3/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+              alt="product-img" />
+
+          </div>
+          <div>
+            <img
+              src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/ace0065e-ce57-4581-91c7-605428a8ab60/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+              alt="product-img" />
+          </div>
+          <div>
+            <img
+              src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/030f39b6-5eae-4213-b8ec-411efa206a31/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+              alt="product-img" />
+          </div>
+        </div>
+      </div>
+
+      <div class="lightbox">
+        <div class="gallery">
+          <div class="main-img">
+            <span class="icon-close">
+              <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                  fill="#69707D" fill-rule="evenodd" />
+              </svg>
+            </span>
+            <span class="icon-prev">
+              <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+              </svg>
+            </span>
+            <span class="icon-next">
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+              </svg>
+            </span>
+
+            <img class="active"
+              src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/4d869c49-dcb5-4671-91b8-68e166bd81dd/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+              alt="product-img" />
+            <img
+              src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/a2ea6af3-b36f-4684-aef0-7e29d91311f3/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+              alt="product-img" />
+            <img
+              src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/ace0065e-ce57-4581-91c7-605428a8ab60/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+              alt="product-img" />
+            <img
+              src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/030f39b6-5eae-4213-b8ec-411efa206a31/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+              alt="product-img" />
+          </div>
+          <div class="thumb-list">
+            <div class="active">
+              <img
+                src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/4d869c49-dcb5-4671-91b8-68e166bd81dd/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+                alt="product-img" />
+            </div>
+            <div>
+              <img
+                src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/a2ea6af3-b36f-4684-aef0-7e29d91311f3/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+                alt="product-img" />
+
+            </div>
+            <div>
+              <img
+                src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/ace0065e-ce57-4581-91c7-605428a8ab60/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+                alt="product-img" />
+
+            </div>
+            <div>
+              <img
+                src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/030f39b6-5eae-4213-b8ec-411efa206a31/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+                alt="product-img" />
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <h3>SNEAKER COMPANY</h3>
+        <h2 class="product-name">Fall Limited Edition Sneakers</h2>
+        <p class="product-desc">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="price-info">
+          <div class="price">
+            <span class="current-price">$125.00</span>
+            <span style="background-color: transparent;" class="discount"></span>
+          </div>
+          <div style="background-color: transparent; color: black; opacity: .4;" class="prev-price">874 <i
+              class="fa-solid fa-eye"></i></div>
+        </div>
+        <div class="add-to-cart-container">
+          <div class="counter">
+            <button class="minus">
+              <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <path
+                    d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                    id="a" />
+                </defs>
+                <use fill="green" fill-rule="nonzero" xlink:href="#a" />
+              </svg>
+            </button>
+            <span class="count">0</span>
+            <button class="plus">
+              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <path
+                    d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                    id="b" />
+                </defs>
+                <use fill="green" fill-rule="nonzero" xlink:href="#b" />
+              </svg>
+            </button>
+          </div>
+          <button class="add-to-cart">
+            <span>
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="#69707D" fill-rule="nonzero" />
+              </svg>
+            </span>
+            <span>Add to cart</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
