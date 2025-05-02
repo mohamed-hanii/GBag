@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    .category-list {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--white-color);
+    }
+
+    .category-list {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 12px 0 11px;
+      scrollbar-width: none;
+    }
+
+    .category-list .category-button {
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.94rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      color: var(--black-color);
+      background: var(--light-gray-color);
+    }
+
+    .category-list .category-button.active {
+      color: var(--white-color);
+      background: var(--black-color);
+      pointer-events: none;
+    }
+
+    .dark-mode .category-list .category-button.active {
+      filter: brightness(120%);
+    }
+
+    .category-list .category-button:not(.active):hover {
+      background: var(--border-color);
+      color: white;
+    }
+
+    .sort-wrapper {
+      max-width: 300px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 16px 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .sort-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+      font-size: 13px;
+      color: #333;
+    }
+
+    .sort-select {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      appearance: none;
+      background: url('https://cdn-icons-png.flaticon.com/512/60/60995.png') no-repeat left center;
+      background-size: 20px;
+      background-position: 98% center;
+      cursor: pointer;
+    }
+
+    .sort-icon-option {
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+    }
+
+    @media (max-width: 600px) {
+      .sort-wrapper {
+        width: 100%;
+      }
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/main_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+    integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/main_script.js"></script>
+  <title>###brand name</title>
+</head>
+
+<body>
+
+  <nav class="navbar z-4 navv bg-transparent fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html"><img src="../logo.png" class="icon" data-aos="fade-right"
+          data-aos-offset="300" data-aos-easing="ease-in-sine"></img></a>
+      <h1 style="font-weight: bold;margin-right: 23px;" class="h4 icon-name">GBag</h1>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div style="font-family: cursive;" class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-user"></i> Login</a>
+            </li>
+            <br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-bag-shopping"></i> Your Bag</a>
+            </li>
+            <br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-heart"></i> Favourite</a>
+            </li>
+            <br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-fire"></i> Popular</a>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-clock"></i> Newest</a>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-tags"></i> Offers</a>
+            </li><br>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Categories
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li><br>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Brands
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-question"></i> Help</a>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+            </li><br>
+
+
+
+          </ul>
+          <br>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control search-input me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row ms-1">
+    <div class="col-12">
+      <div class="category-list">
+        <a href="index.php"><button class="btn btn-outline-success active">All</button></a>
+        <a href="popular.php"><button class="btn btn-outline-success">Nike</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Adidas</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Puma</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Reebok</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">N.Balance</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Apple</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Samsung</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Xiaomi</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Oppo</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Huawei</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Dior</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Guess</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">PRADA</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">VERSACE</button></a>
+        <a href="recent.php"><button class="btn btn-outline-success">Chanel</button></a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="sort-wrapper">
+    <label for="sortSelect" class="sort-label"><i class="fas fa-filter"></i> Sort By :</label>
+    <select id="sortSelect" class="sort-select" onchange="sortProducts(this.value)">
+      <option value="price">Price from lowest to highest</option>
+      <option value="price">Price from highest to lowest</option>
+      <option value="likes">Most loved</option>
+      <option value="views">Most Viewed</option>
+      <option value="sales">Most purchased</option>
+    </select>
+  </div>
+  <br>
+  <div style="padding: 0 10px;" class="row">
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13c1afcf-2614-4840-85ae-ab45f5506c23/KD18+NRG.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f24a901f-8716-44c9-8293-14a6bf9b049f/KD18+NRG.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Tech</h3>
+      <p class="product-price">429 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/010ac63d-45cc-465a-af8a-6df1f746b8cd/G.T.+CUT+3.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/483637ca-8639-4270-a949-fb0081cba364/G.T.+CUT+3.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Team USA 2024</h3>
+      <p class="product-price">28 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/70b3c70e-c0d4-488f-89ed-a15934fb046c/SABRINA+2.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fe34f290-6882-4d21-a33e-44b303efc487/SABRINA+2.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Fly Electric</h3>
+      <p class="product-price">50 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2b88a63b-3498-42bf-93de-8ac656e07868/JORDAN+ZION+4.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/89342274-dfdb-47cb-8e5e-e125b1285707/JORDAN+ZION+4.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Recharge Chug 700</h3>
+      <p class="product-price">100 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81b1555a-3bad-4257-8f0d-eec34c9bf247/JA+2.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a2757452-827e-494b-9c92-6873c4fe3b8c/JA+2.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Convertible Diaper Bag</h3>
+      <p class="product-price">115 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f145210f-78a3-4482-b707-ba1cdeebd55a/GIANNIS+IMMORTALITY+4.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f0ab48a7-cabc-42a5-b353-5e82bdaeaea9/GIANNIS+IMMORTALITY+4.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Echo Shield Sunglass</h3>
+      <p class="product-price">60 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e159c6a4-9ecf-4a36-bc07-b969144ff399/JORDAN+LUKA+4.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e07650fb-412d-4eb0-b81e-74afb9abf98d/JORDAN+LUKA+.77.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike KD17 Basketball</h3>
+      <p class="product-price">700 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8ed56989-0a03-4186-a61a-bad7acf1b135/A%27ONE.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2b2d4b4a-e8b3-4272-bd6f-8ef983583da2/A%27ONE.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Air Jordan XXXIX</h3>
+      <p class="product-price">900 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/66e9a5b4-7431-4e9b-8460-d6947aff2e31/LBJ+NXXT+GENISUS.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/541625d6-886e-4033-aa41-6094bad3306e/LBJ+NXXT+GENISUS.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Light T-Shirt</h3>
+      <p class="product-price">600 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/4d869c49-dcb5-4671-91b8-68e166bd81dd/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/ace0065e-ce57-4581-91c7-605428a8ab60/book-1-wild-berry-and-dusty-cactus-ih0894-500-release-date.jpg"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Thurma Fit</h3>
+      <p class="product-price">870 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/92352485-e389-4c31-910a-01ab275c0aa2/KD+TREY+5+X.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/40fb9d98-998a-4137-acf7-daeaadc854d0/KD+TREY+5+X.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Klop Shino</h3>
+      <p class="product-price">300 $</p>
+    </div>
+    <div class="product-card col-6 col-md-3">
+      <div class="product-img-container">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/83bd3c66-cb00-449d-9efa-d24d8cc217c8/W+G.T.+CUT+3.png"
+          class="product-img default-img" alt="Product">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/88a0a9b6-2bae-4e51-b5ae-2d57cd1151aa/W+G.T.+CUT+3.png"
+          class="product-img hover-img" alt="Product Hover">
+        <div class="product-actions">
+          <div class="action-btn" title="add to fav">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="action-btn" title="Buy Now">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="action-btn" title="View">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="product-name">Nike Solo Soosh</h3>
+      <p class="product-price">465 $</p>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row text-center footer">
+    <footer>
+      <div class="container">
+        <div class="row text-center mb-4">
+          <div class="col-12">
+            <img src="../logo.png" alt="GBag" class="img-fluid mt-4 mb-5" style="max-width: 150px; opacity: .4;">
+          </div>
+        </div>
+
+        <div class="row text-center text-md-start">
+          <div class="col-md-4 mb-4">
+            <h5>Popular Categories</h5>
+            <ul class="list-unstyled">
+              <li><a href="languages/index.html">Shoes</a></li>
+              <li><a href="#">Phones</a></li>
+              <li><a href="#">Clothes</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5>Top Brands</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Nike</a></li>
+              <li><a href="#">Adidas</a></li>
+              <li><a href="#">Puma</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h5>Sections</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Offers</a></li>
+              <li><a href="#">Your Bag</a></li>
+              <li><a href="#">Popular</a></li>
+              <li><a href="#">Newest</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-12">
+            <p style="color: black;">All rights reserved @GBag 2025</p>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  </div>
+
+  <script src="assets/js/jquery-2.1.1.js"></script>
+  <script src="assets/js/jquery.mobile.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
