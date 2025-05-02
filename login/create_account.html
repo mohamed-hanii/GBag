@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/create_acc.css">
+  <link rel="stylesheet" href="../assets/css/main_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+    integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/main_script.js"></script>
+  <title>Create Account | GBag</title>
+</head>
+
+<body>
+  <nav class="navbar z-4 navv bg-transparent fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html"><img src="../logo.png" class="icon" data-aos="fade-right"
+          data-aos-offset="300" data-aos-easing="ease-in-sine"></img></a>
+      <h1 style="font-weight: bold;margin-right: 23px;" class="h4 icon-name">GBag</h1>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div style="font-family: cursive;" class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-user"></i> Login</a>
+            </li>
+            <br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-bag-shopping"></i> Your Bag</a>
+            </li>
+            <br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-heart"></i> Favourite</a>
+            </li>
+            <br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-fire"></i> Popular</a>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-clock"></i> Newest</a>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-tags"></i> Offers</a>
+            </li><br>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Categories
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li><br>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Brands
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-question"></i> Help</a>
+            </li><br>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+            </li><br>
+
+
+
+          </ul>
+          <br>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control search-input me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <br><br>
+
+    <div style="font-size: 24px; font-family: cursive; color: green;"
+      class="row mt-5 pt-5 d-flex align-items-center justify-content-center">
+      Create an account | GBag
+    </div>
+
+    <br><br>
+
+    <div class="row mb-3 d-flex align-items-center justify-content-center">
+      <div class="col-12 col-md-6 mb-3">
+        <input class="textbox textbox" type="text" placeholder="UserName">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <input class="textbox textbox" type="password" placeholder="Password">
+      </div>
+    </div>
+
+    <div class="row mb-3 d-flex align-items-center justify-content-center">
+      <div class="col-12 col-md-6 mb-3">
+        <input class="textbox textbox" type="password" placeholder="Confirm Password">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <input class="textbox textbox" type="email" placeholder="Your Email">
+      </div>
+    </div>
+
+    <div class="row mb-3 d-flex align-items-center justify-content-center">
+      <div class="col-12 col-md-6 mb-3">
+        <input class="textbox textbox" type="text" placeholder="Ask when you forget your password">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <input class="textbox textbox" type="text" placeholder="Answer">
+      </div>
+    </div>
+
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-6">
+        <button class="btn btn-success w-100">Create Account</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="text-center">
+      Already have account?
+    </div><br>
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-3">
+        <button class="btn btn-primary w-100">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+
+
+
+
+</body>
+
+</html>
